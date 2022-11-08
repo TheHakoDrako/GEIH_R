@@ -2,9 +2,8 @@
 
 
 # Jeronimo Ramirez Mejia
-# Juan Camilo Giraldo Restrepo
 
-# Cuentas Nacionales (GEIH)
+# (GEIH 2022 - Enero, Febrero y Marzo)
 
 
 #------------------------------------------------
