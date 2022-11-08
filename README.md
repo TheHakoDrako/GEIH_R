@@ -1,4 +1,4 @@
-# Construcción de la Gran Encuesta Integradora de Hogares "GEIH"
+# Construcción de "GEIH"
 ---
 
 <p align="center">
@@ -7,6 +7,7 @@
 
 ---
 
+- ✅ GEIH = Gran Encuesta Integradora de Hogares -> https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo/geih-historicos
 - ✅ Uso de librerias
 - ✅ Estructura del Código explicada en comentarios
 - ✅ Formulas de acuerdo a la metodología del DANE 2022 - Factor de expansión base 2018
