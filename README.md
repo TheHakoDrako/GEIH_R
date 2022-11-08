@@ -1,4 +1,6 @@
-# Construcción de "GEIH"
+<p align="center"> 
+  <h1> Construcción de la "GEIH" en Rstudio </h1>
+</p>
 ---
 
 <p align="center">
