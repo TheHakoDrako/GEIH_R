@@ -10,7 +10,7 @@
 
 - ✅ GEIH = Gran Encuesta Integradora de Hogares -> https://microdatos.dane.gov.co/catalog/MICRODATOS/about_collection/23
 - ✅ Uso de librerias
-- - data.table - readr - dplyr - plyr - carData - car - haven - tidyverse
+-- data.table - readr - dplyr - plyr - carData - car - haven - tidyverse
 - ✅ Estructura del Código explicada en comentarios
 - ✅ Formulas de acuerdo a la metodología del DANE 2022 - Factor de expansión base 2018
 
