@@ -107,7 +107,7 @@ GEIH_En_Mz <- plyr::rbind.fill(Enero,Febrero,Marzo) %>% mutate(MES=as.numeric(.$
 GEIH_En_Mz$fet <- GEIH_En_Mz$FEX_C18/3
 rm(DatosEnero, DatosFebrero, DatosMarzo)
 
-# Se Filtra el departamento de Bolivar = 13
+# Se Filtra el departamento que desee. Ejemplo: Bolivar = 13
 
 Bolivar <- filter(GEIH_En_Mz, AREA == 13)
 
