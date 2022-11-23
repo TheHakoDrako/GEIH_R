@@ -17,7 +17,7 @@ cat("\f")
 rm(list = ls())
 options("scipen" = 100, "digits" = 4)
 
-setwd("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo")
+setwd("Modelo")
 
 library(data.table)
 library(readr)
@@ -44,16 +44,16 @@ library(tidyverse)
 # Mes de Enero (Union de datos) - Se Asigna E "Enero" al final de las variables
 # Bases externas
 
-DHE <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Enero/DTA/DH.dta")
-FTE <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Enero/DTA/FT.dta")
-OFTE <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Enero/DTA/OFT.dta")
-OIE <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Enero/DTA/OI.dta")
+DHE <- read_dta("DH.dta")
+FTE <- read_dta("FT.dta")
+OFTE <- read_dta("OFT.dta")
+OIE <- read_dta("OI.dta")
 
 # Bases que se cargan en el modelo
 
-CGE <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Enero/DTA/CG.dta")
-NOE <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Enero/DTA/NO.dta")
-OCE <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Enero/DTA/OC.dta")
+CGE <- read_dta("CG.dta")
+NOE <- read_dta("NO.dta")
+OCE <- read_dta("OC.dta")
 
 DatosEnero <- list(CGE, NOE, OCE)
 Enero <- Reduce(function(...) merge(..., by = c("DIRECTORIO","SECUENCIA_P","ORDEN","FEX_C18","AREA"), all.x = T, suffixes = c(" ","_E")), DatosEnero) %>% mutate(MES=1)
@@ -63,16 +63,16 @@ rm(CGE, NOE, OCE)
 # Mes de Febrero (Union de datos) - Se Asigna F "Febrero" al final de las variables
 # Bases externas
 
-DHF <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Febrero/DTA/DH.dta")
-FTF <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Febrero/DTA/FT.dta")
-OFTF <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Febrero/DTA/OFT.dta")
-OIF <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Febrero/DTA/OI.dta")
+DHF <- read_dta("DH.dta")
+FTF <- read_dta("FT.dta")
+OFTF <- read_dta("OFT.dta")
+OIF <- read_dta("OI.dta")
 
 # Bases que se cargan
 
-CGF <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Febrero/DTA/CG.dta")
-NOF <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Febrero/DTA/NO.dta")
-OCF <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Febrero/DTA/OC.dta")
+CGF <- read_dta("CG.dta")
+NOF <- read_dta("NO.dta")
+OCF <- read_dta("OC.dta")
 
 DatosFebrero = list(CGF, NOF, OCF)
 Febrero <- Reduce(function(...) merge(..., by = c("DIRECTORIO","SECUENCIA_P","ORDEN","FEX_C18","AREA"), all.x = T, suffixes = c(" ","_F")), DatosFebrero) %>% mutate(MES=2)
@@ -82,24 +82,19 @@ rm(CGF, NOF, OCF)
 # Mes de Marzo (Union de datos) - Se Asigna M "Marzo" al final de las variables
 # Bases externas
 
-DHM <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Marzo/DTA/DH.dta")
-FTM <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Marzo/DTA/FT.dta")
-OFTM <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Marzo/DTA/OFT.dta")
-OIM <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Marzo/DTA/OI.dta")
+DHM <- read_dta("DH.dta")
+FTM <- read_dta("FT.dta")
+OFTM <- read_dta("OFT.dta")
+OIM <- read_dta("OI.dta")
 
-# Bases que se cargan
-
-CGM <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Marzo/DTA/CG.dta")
-NOM <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Marzo/DTA/NO.dta")
-OCM <- read_dta("D:/Documentos/Universidad/Universidad Del Quindío/Economía/Economía 8 semestre/CuentasNacionales/Desarrollos/Parcial2/Modelo/GEIH_PARCIAL/DatosMeses/2022/Marzo/DTA/OC.dta")
+CGM <- read_dta("CG.dta")
+NOM <- read_dta("NO.dta")
+OCM <- read_dta("OC.dta")
 
 DatosMarzo = list(CGM, NOM, OCM)
 Marzo <- Reduce(function(...) merge(..., by = c("DIRECTORIO","SECUENCIA_P","ORDEN","FEX_C18","AREA"), all.x = T, suffixes = c(" ","_M")), DatosMarzo) %>% mutate(MES=3)
 
 rm(CGM, NOM, OCM)
-
-# Union de las bases de datos (Enero, febrero y marzo) para tener una base de datos en conjunto
-
 GEIH_En_Mz <- plyr::rbind.fill(Enero,Febrero,Marzo) %>% mutate(MES=as.numeric(.$MES,length=0)) %>% mutate(FEX_C18=as.numeric(.$FEX_C18,length=0))
 
 # Algunas descripciones y otros calculos
